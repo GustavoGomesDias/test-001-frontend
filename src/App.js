@@ -10,6 +10,16 @@ function App() {
       <GlobalStyles />
       <Header />
       <Acquisitions />
+      <Acquisitions />
+      <Acquisitions />
+      <Acquisitions />
+      <Acquisitions />
+      <Acquisitions />
+      <Acquisitions />
+      <Acquisitions />
+      <Acquisitions />
+      <Acquisitions />
+      <Acquisitions />
     </>
   );
 }

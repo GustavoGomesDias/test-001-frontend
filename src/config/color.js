@@ -1,3 +1,3 @@
-export const primaryColor = '#3e4162';
-export const background = '#0D1117';
-export const background2 = '#303030';
+export const primaryColor = '#75AEFF';
+export const background = '#2F3437';
+export const background2 = '#373C3F';

@@ -2,10 +2,14 @@ import styled from 'styled-components';
 import * as color from '../../config/color';
 
 export const Nav = styled.nav`
-  background: ${color.primaryColor};
+  background: ${color.background};
+  position: sticky;
+  width: 100%;
+  top: 0;
   padding: 20px;
-  display: flex;
-  align-items: flex-start;
+  z-index: 99;
+
+  border-bottom: 2px solid ${color.primaryColor};
 
   a {
     color: #fff;
