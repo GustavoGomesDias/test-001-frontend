@@ -1,13 +1,76 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container } from '../../styles/GlobalStyles';
+import { AcContainer, Header } from './styled';
+import axios from '../../config/axios';
 
-export default function Sales() {
+export default function Acquisitions() {
+  const [acquisitions, setAcquisitions] = useState([]);
+  // const [avaliable, setAvaliable] = useState(false);
+
+  useEffect(() => {
+    async function getAcquisitions() {
+      const response = await axios.get('/acquisition');
+      console.log(response.data);
+      setAcquisitions(response.data);
+    }
+
+    getAcquisitions();
+  }, []);
+
+  // function handleAvaliable() {
+  //   setAvaliable(true);
+  // }
+
   return (
     <Container>
-      <h1>Compras</h1>
-      <a href="/register/acquisition">Registrar Compra</a>
-      <button type="button">Teste</button>
+      <Header>
+        <h1>Compras</h1>
+        <a href="/register/acquisitins">Cadastrar nova compra</a>
+        {/* <button type="button" onClick={handleAvaliable}>
+          Mostrar disponíveis
+        </button> */}
+      </Header>
+
+      <AcContainer>
+        <table>
+          <thead>
+            <tr>
+              <th>Preço</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Placa</th>
+              <th>Chassi</th>
+              <th>Cor</th>
+              <th>Ano de Fabricação</th>
+              <th>Disponibilidade</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            {acquisitions.map((ac) => (
+              <tr key={ac.id}>
+                <td>{ac.price}</td>
+                <td>{ac.brand}</td>
+                <td>{ac.model}</td>
+                <td>{ac.plate}</td>
+                <td>{ac.chassis}</td>
+                <td>{ac.color}</td>
+                <td>{ac.manufacture_year}</td>
+                <td>{ac.available ? 'Disponível' : 'Não disponível'}</td>
+                <td className="actions">
+                  <a href="/" className="edit-button">
+                    Editar
+                  </a>
+                  <button type="button" className="delete-button">
+                    Excluir
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </AcContainer>
     </Container>
   );
 }
