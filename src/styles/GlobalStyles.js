@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import * as color from '../config/color';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   * {
@@ -12,7 +13,7 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
-    background: yellowgreen;
+    background: ${color.success};
     border: none;
     color: #fff;
     padding: 10px 20px;
@@ -33,6 +34,13 @@ export default createGlobalStyle`
 
   body {
     background: ${color.background};
+  }
+
+  body .Toastify .Toastify__toast-container .Toastify__toast--success {
+    background: ${color.success};
+  }
+  body .Toastify .Toastify__toast-container .Toastify__toast--error {
+    background: ${color.errorColor};
   }
 `;
 
