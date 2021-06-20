@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import { get } from 'lodash';
 
 import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styled';
+import axios from '../../config/axios';
+import { validationField } from '../../validations/validations';
 
 // modelo, marca, ano de fabricação, placa, cor, chassi, data da compra e valor da compra
 
@@ -14,10 +18,63 @@ export default function RegisterAcquisition() {
   const [color, setColor] = useState('');
   const [price, setPrice] = useState(0);
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    let formErrors = false;
+
+    if (chassis.length < 17) {
+      formErrors = true;
+      toast.error('O chassi precisa ter pelo menos 17 caracteres.');
+    }
+
+    if (
+      validationField(model) ||
+      validationField(brand) ||
+      validationField(year) ||
+      validationField(plate) ||
+      validationField(color) ||
+      validationField(price)
+    ) {
+      formErrors = true;
+      toast.error('Todos os campos precisam ser preenchindos.');
+    }
+
+    if (!/^[a-zA-Z]{3}[0-9]{4}$/.test(plate)) {
+      formErrors = true;
+      toast.error('Todos os campos precisam ser preenchindos.');
+    }
+
+    if (price === 0) {
+      formErrors = true;
+      toast.error('Todos os campos precisam ser preenchindos.');
+    }
+
+    if (formErrors) return;
+
+    try {
+      await axios.post('/acquisition', {
+        chassis,
+        model,
+        brand,
+        manufacture_year: year,
+        plate,
+        color,
+        price,
+        available: true,
+      });
+      toast.success('Cadastrado com sucesso.');
+    } catch (err) {
+      const errors = get(err, 'response.data.errors', []);
+
+      errors.map((error) => toast.error(error));
+    }
+  }
+
   return (
     <Container>
       <h1>Registrar Compra</h1>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <div className="column-1">
           <label htmlFor="chassis">
             Chassi
