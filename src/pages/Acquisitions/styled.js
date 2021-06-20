@@ -37,6 +37,8 @@ export const AcContainer = styled.div`
   }
 
   .edit-button {
+    display: flex;
+    margin-top: 5px;
     cursor: pointer;
     background: ${colors.success};
     border: none;
@@ -53,7 +55,6 @@ export const AcContainer = styled.div`
 
   .delete-button {
     margin-top: 15px;
-    margin-bottom: 0px;
     background: ${colors.errorColor};
   }
 `;
@@ -61,4 +62,22 @@ export const AcContainer = styled.div`
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
+  margin: auto;
+
+  h1 {
+    margin-left: 32px;
+  }
+
+  .button-actions {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .available {
+    background: none;
+    text-decoration: none;
+    color: yellowgreen;
+  }
 `;
