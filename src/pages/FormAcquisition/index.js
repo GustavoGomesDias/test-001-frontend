@@ -10,16 +10,17 @@ import { validationField } from '../../validations/validations';
 
 // modelo, marca, ano de fabricação, placa, cor, chassi, data da compra e valor da compra
 
-export default function FormAcquisition(props) {
-  const [chassis, setChassis] = useState('');
-  const [model, setModel] = useState('');
-  const [brand, setBrand] = useState('');
-  const [year, setYear] = useState('');
-  const [plate, setPlate] = useState('');
-  const [color, setColor] = useState('');
-  const [price, setPrice] = useState(0);
-
-  // const { ac } = props.location.state;
+export default function FormAcquisition({ location }) {
+  const vehicle = location.state;
+  const [chassis, setChassis] = useState(vehicle ? vehicle.ac.chassis : '');
+  const [model, setModel] = useState(vehicle ? vehicle.ac.model : '');
+  const [brand, setBrand] = useState(vehicle ? vehicle.ac.brand : '');
+  const [year, setYear] = useState(vehicle ? vehicle.ac.manufacture_year : '');
+  const [plate, setPlate] = useState(vehicle ? vehicle.ac.plate : '');
+  const [color, setColor] = useState(vehicle ? vehicle.ac.color : '');
+  const [price, setPrice] = useState(
+    vehicle ? parseFloat(vehicle.ac.price) : 0
+  );
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -56,17 +57,30 @@ export default function FormAcquisition(props) {
     if (formErrors) return;
 
     try {
-      await axios.post('/acquisition', {
-        chassis,
-        model,
-        brand,
-        manufacture_year: year,
-        plate,
-        color,
-        price,
-        available: true,
-      });
-      toast.success('Cadastrado com sucesso.');
+      if (vehicle) {
+        await axios.put(`/acquisition/edit/${vehicle.ac.id}`, {
+          chassis,
+          model,
+          brand,
+          manufacture_year: year,
+          plate,
+          color,
+          price,
+        });
+        toast.success('Editado com sucesso.');
+      } else {
+        await axios.post('/acquisition', {
+          chassis,
+          model,
+          brand,
+          manufacture_year: year,
+          plate,
+          color,
+          price,
+          available: true,
+        });
+        toast.success('Cadastrado com sucesso.');
+      }
     } catch (err) {
       const errors = get(err, 'response.data.errors', []);
 
@@ -78,7 +92,7 @@ export default function FormAcquisition(props) {
 
   return (
     <Container>
-      <h1>{props ? 'Editar compra' : 'Registrar compra'}</h1>
+      <h1>{vehicle ? 'Editar compra' : 'Registrar compra'}</h1>
       <Form onSubmit={handleSubmit}>
         <div className="column-1">
           <label htmlFor="chassis">
@@ -150,7 +164,7 @@ export default function FormAcquisition(props) {
             />
           </label>
           <button type="submit" className="cofirm-acquisition">
-            Cadastrar compra
+            {vehicle ? 'Editar' : 'Cadastrar'}
           </button>
         </div>
       </Form>

@@ -14,7 +14,7 @@ export default function Routes() {
       <Route exact path="/sales" component={Sales} />
       <Route exact path="/acquisitions" component={Acquisitions} />
       <Route exact path="/register/acquisition" component={FormAcquisition} />
-      <Route exact path="/edit/acquisition/:id" component={FormAcquisition} />
+      <Route exact path="/edit/acquisition" component={FormAcquisition} />
       <Route path="*" component={Page404} />
     </Switch>
   );
