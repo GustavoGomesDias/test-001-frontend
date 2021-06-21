@@ -31,6 +31,9 @@ export default createGlobalStyle`
   ul {
     list-style: none;
   }
+  h1 {
+
+  }
 
   body {
     background: ${color.background};
@@ -41,6 +44,10 @@ export default createGlobalStyle`
   }
   body .Toastify .Toastify__toast-container .Toastify__toast--error {
     background: ${color.errorColor};
+  }
+
+  .home {
+    background: ${color.background};
   }
 `;
 
