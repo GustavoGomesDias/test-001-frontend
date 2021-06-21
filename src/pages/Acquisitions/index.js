@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Container } from '../../styles/GlobalStyles';
 import { AcContainer, Header } from './styled';
@@ -12,7 +13,6 @@ export default function Acquisitions() {
   useEffect(() => {
     async function getAcquisitions() {
       const response = await axios.get('/acquisition');
-      console.log(response.data);
       setAcquisitions(response.data);
     }
 
@@ -38,7 +38,9 @@ export default function Acquisitions() {
       <Header>
         <h1>Compras</h1>
         <div className="button-actions">
-          <a href="/register/acquisition">Cadastrar nova compra</a>
+          <Link to="/register/acquisition" className="register">
+            Cadastrar nova compra
+          </Link>
           <button type="button" className="available" onClick={handleAvaliable}>
             Mostrar disponíveis
           </button>
@@ -64,47 +66,32 @@ export default function Acquisitions() {
             </tr>
           </thead>
           <tbody>
-            {available
-              ? vehicles.map((ac) => (
-                  <tr key={ac.id}>
-                    <td>{ac.price}</td>
-                    <td>{ac.brand}</td>
-                    <td>{ac.model}</td>
-                    <td>{ac.plate}</td>
-                    <td>{ac.chassis}</td>
-                    <td>{ac.color}</td>
-                    <td>{ac.manufacture_year}</td>
-                    <td>{ac.available ? 'Disponível' : 'Não disponível'}</td>
-                    <td className="actions">
-                      <a href="/" className="edit-button">
-                        Editar
-                      </a>
-                      <button type="button" className="delete-button">
-                        Excluir
-                      </button>
-                    </td>
-                  </tr>
-                ))
-              : acquisitions.map((ac) => (
-                  <tr key={ac.id}>
-                    <td>{ac.price}</td>
-                    <td>{ac.brand}</td>
-                    <td>{ac.model}</td>
-                    <td>{ac.plate}</td>
-                    <td>{ac.chassis}</td>
-                    <td>{ac.color}</td>
-                    <td>{ac.manufacture_year}</td>
-                    <td>{ac.available ? 'Disponível' : 'Não disponível'}</td>
-                    <td className="actions">
-                      <a href="/" className="edit-button">
-                        Editar
-                      </a>
-                      <button type="button" className="delete-button">
-                        Excluir
-                      </button>
-                    </td>
-                  </tr>
-                ))}
+            {(available ? vehicles : acquisitions).map((ac) => (
+              <tr key={ac.id}>
+                <td>{ac.price}</td>
+                <td>{ac.brand}</td>
+                <td>{ac.model}</td>
+                <td>{ac.plate}</td>
+                <td>{ac.chassis}</td>
+                <td>{ac.color}</td>
+                <td>{ac.manufacture_year}</td>
+                <td>{ac.available ? 'Disponível' : 'Não disponível'}</td>
+                <td className="actions">
+                  <Link
+                    to={{
+                      pathname: `edit/acquisition`,
+                      state: { ac },
+                    }}
+                    className="edit-button"
+                  >
+                    Editar
+                  </Link>
+                  <button type="button" className="delete-button">
+                    Excluir
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </AcContainer>

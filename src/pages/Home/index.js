@@ -14,7 +14,7 @@ export default function Home() {
           <h2>Descrição</h2>
           <p>
             Este é um projeto que tem o intuito de participar de um teste de
-            emprego, sendo a vaga para Desenvolvedor JR. Ele É dividido em 2
+            emprego, sendo a vaga para Desenvolvedor JR. Ele é dividido em 2
             partes, com esse sendo a parte de front-end e contendo ainda uma
             parte back-end.
           </p>

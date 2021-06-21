@@ -5,7 +5,7 @@ import Home from '../pages/Home';
 import Sales from '../pages/Sales';
 import Acquisitions from '../pages/Acquisitions';
 import Page404 from '../pages/Page404';
-import RegisterAcquisition from '../pages/RegisterAcquisition';
+import FormAcquisition from '../pages/FormAcquisition';
 
 export default function Routes() {
   return (
@@ -13,11 +13,8 @@ export default function Routes() {
       <Route exact path="/" component={Home} />
       <Route exact path="/sales" component={Sales} />
       <Route exact path="/acquisitions" component={Acquisitions} />
-      <Route
-        exact
-        path="/register/acquisition"
-        component={RegisterAcquisition}
-      />
+      <Route exact path="/register/acquisition" component={FormAcquisition} />
+      <Route exact path="/edit/acquisition/:id" component={FormAcquisition} />
       <Route path="*" component={Page404} />
     </Switch>
   );

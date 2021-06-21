@@ -63,6 +63,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   margin: auto;
+  font-size: 12px;
 
   h1 {
     margin-left: 32px;
@@ -79,5 +80,10 @@ export const Header = styled.header`
     background: none;
     text-decoration: none;
     color: yellowgreen;
+  }
+
+  .register {
+    text-align: center;
+    font-weight: 700;
   }
 `;

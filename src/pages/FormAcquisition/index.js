@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { get } from 'lodash';
+import PropTypes from 'prop-types';
 
 import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styled';
@@ -9,7 +10,7 @@ import { validationField } from '../../validations/validations';
 
 // modelo, marca, ano de fabricação, placa, cor, chassi, data da compra e valor da compra
 
-export default function RegisterAcquisition() {
+export default function FormAcquisition(props) {
   const [chassis, setChassis] = useState('');
   const [model, setModel] = useState('');
   const [brand, setBrand] = useState('');
@@ -17,6 +18,8 @@ export default function RegisterAcquisition() {
   const [plate, setPlate] = useState('');
   const [color, setColor] = useState('');
   const [price, setPrice] = useState(0);
+
+  // const { ac } = props.location.state;
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -71,9 +74,11 @@ export default function RegisterAcquisition() {
     }
   }
 
+  // Trocar props por id
+
   return (
     <Container>
-      <h1>Registrar Compra</h1>
+      <h1>{props ? 'Editar compra' : 'Registrar compra'}</h1>
       <Form onSubmit={handleSubmit}>
         <div className="column-1">
           <label htmlFor="chassis">
@@ -152,3 +157,16 @@ export default function RegisterAcquisition() {
     </Container>
   );
 }
+
+FormAcquisition.defaultProps = {
+  location: {
+    pathname: '',
+  },
+};
+
+FormAcquisition.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+    state: PropTypes.objectOf(PropTypes.object),
+  }),
+};
