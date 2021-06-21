@@ -24,15 +24,19 @@ export default createGlobalStyle`
   button:hover {
     filter: brightness(75%);
   }
+
   a {
     text-decoration: none;
     color: yellowgreen;
+    transition: all 300ms
   }
+
+  a:hover {
+    filter: brightness(75%);
+  }
+
   ul {
     list-style: none;
-  }
-  h1 {
-
   }
 
   body {

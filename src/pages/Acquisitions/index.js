@@ -26,14 +26,24 @@ export default function Acquisitions() {
     setVehicles(arr);
   }
 
+  function handleSolds() {
+    setAvailable(!available);
+    const arr = [];
+    acquisitions.map((ac) => (!ac.available ? arr.push(ac) : arr));
+    setVehicles(arr);
+  }
+
   return (
     <Container>
       <Header>
         <h1>Compras</h1>
         <div className="button-actions">
-          <a href="/register/acquisitins">Cadastrar nova compra</a>
+          <a href="/register/acquisition">Cadastrar nova compra</a>
           <button type="button" className="available" onClick={handleAvaliable}>
             Mostrar disponíveis
+          </button>
+          <button type="button" className="available" onClick={handleSolds}>
+            Mostrar Vendidos
           </button>
         </div>
       </Header>
