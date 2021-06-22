@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { get } from 'lodash';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styled';
@@ -21,6 +22,8 @@ export default function FormAcquisition({ location }) {
   const [price, setPrice] = useState(
     vehicle ? parseFloat(vehicle.ac.price) : 0
   );
+
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -81,14 +84,14 @@ export default function FormAcquisition({ location }) {
         });
         toast.success('Cadastrado com sucesso.');
       }
+
+      history.push('/acquisitions');
     } catch (err) {
       const errors = get(err, 'response.data.errors', []);
 
       errors.map((error) => toast.error(error));
     }
   }
-
-  // Trocar props por id
 
   return (
     <Container>

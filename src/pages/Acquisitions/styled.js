@@ -4,8 +4,13 @@ import * as colors from '../../config/color';
 export const AcContainer = styled.div`
   overflow-x: auto;
 
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+
   width: 100%;
-  div {
+
+  .button-actions {
     margin-top: 10px;
     display: flex;
     align-items: center;
@@ -13,30 +18,31 @@ export const AcContainer = styled.div`
     padding: 5px 0;
   }
 
-  table {
-    border-collapse: collapse;
-    width: 50% !important;
-    margin: auto;
-  }
+  .items {
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background: ${colors.background2};
 
-  tr:hover {
-    background: ${colors.secundaryColor};
-  }
-
-  table,
-  th,
-  td {
-    margin-top: 10px;
-    border: 2px solid ${colors.primaryColor};
+    margin: 15px;
     padding: 10px;
-    text-align: center;
-  }
+    width: 30%;
+    p {
+      text-align: center;
+      margin: 2px;
+      font-size: 13px;
+      font-weight: 700;
+    }
 
-  th {
-    background: ${colors.secundaryColor};
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .edit-button {
+    width: 82px;
     display: flex;
     margin-top: 5px;
     cursor: pointer;
@@ -66,6 +72,8 @@ export const Header = styled.header`
   font-size: 12px;
 
   h1 {
+    display: flex;
+    align-items: center;
     margin-left: 32px;
   }
 
