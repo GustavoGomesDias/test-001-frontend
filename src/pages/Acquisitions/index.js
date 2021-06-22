@@ -84,15 +84,17 @@ export default function Acquisitions() {
 
             <p>{ac.available ? 'Disponível' : 'Não disponível'}</p>
             <div className="actions">
-              <Link
-                to={{
-                  pathname: `edit/acquisition`,
-                  state: { ac },
-                }}
-                className="edit-button"
-              >
-                Editar
-              </Link>
+              <button type="button" className="edit-button">
+                <Link
+                  to={{
+                    pathname: `edit/acquisition`,
+                    state: { ac },
+                  }}
+                  className="link"
+                >
+                  Editar
+                </Link>
+              </button>
               <button
                 type="button"
                 className="delete-button"

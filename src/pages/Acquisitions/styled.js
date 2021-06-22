@@ -21,7 +21,7 @@ export const AcContainer = styled.div`
   .items {
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    background: ${colors.background2};
+    background: ${colors.background};
 
     margin: 15px;
     padding: 10px;
@@ -42,17 +42,12 @@ export const AcContainer = styled.div`
   }
 
   .edit-button {
-    width: 82px;
-    display: flex;
     margin-top: 5px;
-    cursor: pointer;
     background: ${colors.success};
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: 700;
-    transition: all 300ms;
+
+    .link {
+      color: #fff;
+    }
   }
 
   .edit-button:hover {
