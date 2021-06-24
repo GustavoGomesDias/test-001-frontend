@@ -60,25 +60,27 @@ export default function Home() {
         </div>
       </Div>
       <Table>
-        <tr />
-        <td align="center">
-          <a href="https://github.com/GustavoGomesDias">
-            <img
-              src="https://github.com/GustavoGomesDias.png"
-              width="100px;"
-              alt="Profile"
-            />
-            <br />
-            <sub>
-              <b>Autor: Gustavo</b>
-            </sub>
-          </a>
-          <br />
-          <a href="https://github.com/GustavoGomesDias" title="Code">
-            😎
-          </a>
-        </td>
-        <tr />
+        <tbody>
+          <tr>
+            <td align="center">
+              <a href="https://github.com/GustavoGomesDias">
+                <img
+                  src="https://github.com/GustavoGomesDias.png"
+                  width="100px;"
+                  alt="Profile"
+                />
+                <br />
+                <sub>
+                  <b>Autor: Gustavo</b>
+                </sub>
+              </a>
+              <br />
+              <a href="https://github.com/GustavoGomesDias" title="Code">
+                😎
+              </a>
+            </td>
+          </tr>
+        </tbody>
       </Table>
     </Container>
   );

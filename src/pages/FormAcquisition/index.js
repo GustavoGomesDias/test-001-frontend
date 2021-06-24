@@ -9,8 +9,6 @@ import { Form } from './styled';
 import axios from '../../config/axios';
 import { validationField } from '../../validations/validations';
 
-// modelo, marca, ano de fabricação, placa, cor, chassi, data da compra e valor da compra
-
 export default function FormAcquisition({ location }) {
   const vehicle = location.state;
   const [chassis, setChassis] = useState(vehicle ? vehicle.ac.chassis : '');

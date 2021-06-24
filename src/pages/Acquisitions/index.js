@@ -68,40 +68,41 @@ export default function Acquisitions() {
       <AcContainer>
         {(available ? vehicles : acquisitions).map((ac) => (
           <div key={ac.id} className="items">
-            <p>Preço: {ac.price}</p>
+            <h3 className="header">{ac.model}</h3>
+            <div className="infos">
+              <p>Preço: {ac.price}</p>
 
-            <p>Marca: {ac.brand}</p>
+              <p>Marca: {ac.brand}</p>
 
-            <p>Modelo: {ac.model}</p>
+              <p>Placa: {ac.plate}</p>
 
-            <p>Placa: {ac.plate}</p>
+              <p>Chassi: {ac.chassis}</p>
 
-            <p>Chassi: {ac.chassis}</p>
+              <p>Cor: {ac.color}</p>
 
-            <p>Cor: {ac.color}</p>
+              <p>Ano de fabricação: {ac.manufacture_year}</p>
 
-            <p>Ano de fabricação: {ac.manufacture_year}</p>
-
-            <p>{ac.available ? 'Disponível' : 'Não disponível'}</p>
-            <div className="actions">
-              <button type="button" className="edit-button">
-                <Link
-                  to={{
-                    pathname: `edit/acquisition`,
-                    state: { ac },
-                  }}
-                  className="link"
+              <p>{ac.available ? 'Disponível' : 'Não disponível'}</p>
+              <div className="actions">
+                <button type="button" className="edit-button">
+                  <Link
+                    to={{
+                      pathname: `edit/acquisition`,
+                      state: { ac },
+                    }}
+                    className="link"
+                  >
+                    Editar
+                  </Link>
+                </button>
+                <button
+                  type="button"
+                  className="delete-button"
+                  onClick={(e) => deleteVehicle(ac.id, e)}
                 >
-                  Editar
-                </Link>
-              </button>
-              <button
-                type="button"
-                className="delete-button"
-                onClick={(e) => deleteVehicle(ac.id, e)}
-              >
-                Excluir
-              </button>
+                  Excluir
+                </button>
+              </div>
             </div>
           </div>
         ))}

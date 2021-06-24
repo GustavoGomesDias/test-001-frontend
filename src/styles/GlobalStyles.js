@@ -54,6 +54,52 @@ export default createGlobalStyle`
   .home {
     background: ${color.background};
   }
+
+  .items {
+    width: 30%;
+    margin: 15px;
+
+    .infos {
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      background: ${color.background};
+      width: 100%;
+      margin: 5px 0;
+      padding: 10px;
+      p {
+        text-align: center;
+        margin: 2px;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 5px;
+      }
+      .actions {
+        display: flex;
+        width: 100%;
+        padding: 5px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        margin: 0;
+        border-top: 2px solid ${color.primaryColor};
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .header {
+      padding: 5px;
+      background: ${color.primaryColor};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+    }
+  }
 `;
 
 export const Container = styled.section`

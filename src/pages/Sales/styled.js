@@ -18,30 +18,6 @@ export const SaleContainer = styled.div`
     padding: 5px 0;
   }
 
-  .items {
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    background: ${colors.background};
-
-    margin: 15px;
-    padding: 10px;
-    width: 30%;
-    p {
-      text-align: center;
-      margin: 2px;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 5px;
-    }
-
-    .actions {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
   .edit-button {
     width: 82px;
     display: flex;
