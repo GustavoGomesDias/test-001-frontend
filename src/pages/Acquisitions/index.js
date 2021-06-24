@@ -106,6 +106,18 @@ export default function Acquisitions() {
                 {ac.manufacture_year}
               </p>
               <div className="actions">
+                {ac.available ? (
+                  <button type="button" className="sale-button">
+                    <Link to="/" className="link">
+                      Vender
+                    </Link>{' '}
+                  </button>
+                ) : (
+                  <p className="center">
+                    <span className="field available">Vendido</span>
+                  </p>
+                )}
+
                 <button type="button" className="edit-button">
                   <Link
                     to={{

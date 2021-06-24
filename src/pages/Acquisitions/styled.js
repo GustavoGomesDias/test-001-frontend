@@ -18,8 +18,7 @@ export const AcContainer = styled.div`
     padding: 5px 0;
   }
 
-  .edit-button {
-    margin-top: 5px;
+  .sale-button {
     background: ${colors.success};
 
     .link {
@@ -27,8 +26,13 @@ export const AcContainer = styled.div`
     }
   }
 
-  .edit-button:hover {
-    filter: brightness(75%);
+  .edit-button {
+    margin-top: 15px;
+    background: ${colors.warning};
+
+    .link {
+      color: #fff;
+    }
   }
 
   .delete-button {

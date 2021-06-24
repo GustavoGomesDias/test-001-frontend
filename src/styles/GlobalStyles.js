@@ -27,7 +27,7 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: yellowgreen;
+    color: ${color.colorLink};
     transition: all 300ms
   }
 
@@ -114,7 +114,7 @@ export default createGlobalStyle`
         align-items: center;
         justify-content: center;
 
-      .available {
+        .available {
           background: ${color.success};
         }
 
@@ -184,7 +184,7 @@ export const Header = styled.header`
   .available {
     background: none;
     text-decoration: none;
-    color: yellowgreen;
+    color: ${color.colorLink};
   }
 
   .register {
