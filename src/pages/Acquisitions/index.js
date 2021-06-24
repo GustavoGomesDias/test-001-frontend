@@ -110,7 +110,7 @@ export default function Acquisitions() {
                   <button type="button" className="sale-button">
                     <Link to="/" className="link">
                       Vender
-                    </Link>{' '}
+                    </Link>
                   </button>
                 ) : (
                   <p className="center">
