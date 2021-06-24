@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container } from '../../styles/GlobalStyles';
+import { Container, Header } from '../../styles/GlobalStyles';
 import axios from '../../config/axios';
-import { SaleContainer, Header } from './styled';
+import { SaleContainer } from './styled';
 
 export default function Sales() {
   const [sales, setSales] = useState([]);

@@ -102,7 +102,7 @@ export default createGlobalStyle`
         }
 
         .description {
-          width: 50%;
+          width: 40%;
           text-align: center;
           margin-right: 5px;
         }
@@ -160,4 +160,57 @@ export const Container = styled.section`
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #fff;
+`;
+
+export const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  font-size: 12px;
+
+  h1 {
+    display: flex;
+    align-items: center;
+    margin-left: 32px;
+  }
+
+  .button-actions {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .available {
+    background: none;
+    text-decoration: none;
+    color: yellowgreen;
+  }
+
+  .register {
+    text-align: center;
+    font-weight: 700;
+  }
+
+  @media (max-width: 800px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+
+    h1 {
+      margin: 0;
+    }
+
+    .button-actions {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+
+      border-top: 2px solid ${color.primaryColor};
+      border-bottom: 2px solid ${color.primaryColor};
+    }
+  }
 `;

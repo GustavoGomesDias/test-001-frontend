@@ -41,34 +41,3 @@ export const SaleContainer = styled.div`
     background: ${colors.errorColor};
   }
 `;
-
-export const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-  font-size: 12px;
-
-  h1 {
-    display: flex;
-    align-items: center;
-    margin-left: 32px;
-  }
-
-  .button-actions {
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .available {
-    background: none;
-    text-decoration: none;
-    color: yellowgreen;
-  }
-
-  .register {
-    text-align: center;
-    font-weight: 700;
-  }
-`;

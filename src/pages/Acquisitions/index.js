@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { get } from 'lodash';
 import { toast } from 'react-toastify';
 
-import { Container } from '../../styles/GlobalStyles';
-import { AcContainer, Header } from './styled';
+import { Container, Header } from '../../styles/GlobalStyles';
+import { AcContainer } from './styled';
 import axios from '../../config/axios';
 
 export default function Acquisitions() {
@@ -92,7 +92,8 @@ export default function Acquisitions() {
               </p>
 
               <p>
-                <span className="field description">Chassi</span> {ac.chassis}
+                <span className="field description">Chassi</span>{' '}
+                {ac.chassis.toUpperCase()}
               </p>
 
               <p>
