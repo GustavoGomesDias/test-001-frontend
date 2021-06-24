@@ -56,6 +56,18 @@ export default createGlobalStyle`
   }
 
   .items {
+
+    @media (max-width: 800px) {
+      display: block;
+      width: 100%;
+
+      .description {
+        width: 30%;
+        text-align: center;
+        margin-right: 5px;
+      }
+    }
+
     width: 30%;
     margin: 15px;
 
@@ -67,12 +79,44 @@ export default createGlobalStyle`
       margin: 5px 0;
       padding: 10px;
       p {
-        text-align: center;
-        margin: 2px;
+        text-align: left;
+        margin-bottom: 6px;
         font-size: 13px;
         font-weight: 700;
         padding: 5px;
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+
+        .field {
+          background: ${color.primaryColor};
+          padding: 5px;
+          border-radius: 4px;
+        }
+
+        .description {
+          width: 50%;
+          text-align: center;
+          margin-right: 5px;
+        }
       }
+
+      .center {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      .available {
+          background: ${color.success};
+        }
+
+        .not-available {
+          background: ${color.errorColor};
+        }
+      }
+
       .actions {
         display: flex;
         width: 100%;

@@ -66,4 +66,11 @@ export const Header = styled.header`
     text-align: center;
     font-weight: 700;
   }
+
+  @media (max-width: 800px) {
+    .button-actions {
+      display: block;
+      margin: 0;
+    }
+  }
 `;

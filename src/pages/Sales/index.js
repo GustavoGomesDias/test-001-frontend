@@ -40,10 +40,24 @@ export default function Sales() {
           <div key={sale.id} className="items">
             <h3 className="header">{formatDate(sale.created_at)}</h3>
             <div className="infos">
-              <p>Valor da venda: {sale.value}</p>
-              <p>Comissão do vendedor: {sale.commission}</p>
-              <p>Chassis do veículo: {sale.Acquisition.chassis}</p>
-              <p>Prço de aquisição do veículo: R$ {sale.Acquisition.price}</p>
+              <p>
+                <span className="field description">Valor da venda</span>{' '}
+                {sale.value}
+              </p>
+              <p>
+                <span className="field description">Comissão do vendedor</span>{' '}
+                {sale.commission}
+              </p>
+              <p>
+                <span className="field description">Chassi do veículo</span>{' '}
+                {sale.Acquisition.chassis}
+              </p>
+              <p>
+                <span className="field description">
+                  Preço de aquisição do veículo
+                </span>{' '}
+                R$ {sale.Acquisition.price}
+              </p>
             </div>
           </div>
         ))}

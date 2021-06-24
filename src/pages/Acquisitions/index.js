@@ -70,19 +70,40 @@ export default function Acquisitions() {
           <div key={ac.id} className="items">
             <h3 className="header">{ac.model}</h3>
             <div className="infos">
-              <p>Preço: {ac.price}</p>
+              <p className="center">
+                <span
+                  className={
+                    ac.available ? 'field available' : 'field not-available'
+                  }
+                >
+                  {ac.available ? 'Disponível' : 'Não disponível'}
+                </span>
+              </p>
+              <p>
+                <span className="field description">Preço</span> {ac.price}
+              </p>
 
-              <p>Marca: {ac.brand}</p>
+              <p>
+                <span className="field description">Marca</span> {ac.brand}
+              </p>
 
-              <p>Placa: {ac.plate}</p>
+              <p>
+                <span className="field description">Placa</span> {ac.plate}
+              </p>
 
-              <p>Chassi: {ac.chassis}</p>
+              <p>
+                <span className="field description">Chassi</span> {ac.chassis}
+              </p>
 
-              <p>Cor: {ac.color}</p>
+              <p>
+                <span className="field description">Cor</span>
+                {ac.color}
+              </p>
 
-              <p>Ano de fabricação: {ac.manufacture_year}</p>
-
-              <p>{ac.available ? 'Disponível' : 'Não disponível'}</p>
+              <p>
+                <span className="field description">Ano de fabricação</span>{' '}
+                {ac.manufacture_year}
+              </p>
               <div className="actions">
                 <button type="button" className="edit-button">
                   <Link
