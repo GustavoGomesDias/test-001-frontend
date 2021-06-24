@@ -7,9 +7,15 @@ export const Nav = styled.nav`
   width: 100%;
   top: 0;
   padding: 20px;
-  z-index: 99;
+  z-index: 98;
 
   border-bottom: 2px solid ${color.primaryColor};
+
+  @media (max-width: 800px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   a {
     color: #fff;

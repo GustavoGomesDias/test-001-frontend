@@ -44,6 +44,12 @@ export default createGlobalStyle`
     background: ${color.background};
   }
 
+  @media (max-width: 800px) {
+     html, body {
+      overflow-x: hidden;
+    }
+  }
+
   body .Toastify .Toastify__toast-container .Toastify__toast--success {
     background: ${color.success};
   }
