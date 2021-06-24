@@ -4,7 +4,7 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
-import { Container } from '../../styles/GlobalStyles';
+import { Container, Header } from '../../styles/GlobalStyles';
 import { Form } from './styled';
 import axios from '../../config/axios';
 import { validationField } from '../../validations/validations';
@@ -93,7 +93,9 @@ export default function FormAcquisition({ location }) {
 
   return (
     <Container>
-      <h1>{vehicle ? 'Editar compra' : 'Registrar compra'}</h1>
+      <Header>
+        <h1>{vehicle ? 'Editar compra' : 'Registrar compra'}</h1>
+      </Header>
       <Form onSubmit={handleSubmit}>
         <div className="column-1">
           <label htmlFor="chassis">

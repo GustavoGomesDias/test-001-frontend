@@ -30,4 +30,23 @@ export const Form = styled.form`
     margin-top: 15px;
     font-size: 18px;
   }
+
+  @media (max-width: 800px) {
+    display: block;
+
+    .column-1 {
+      width: 100%;
+
+      label {
+        width: 100%;
+        input {
+          width: 100%;
+        }
+      }
+
+      .cofirm-acquisition {
+        width: 100%;
+      }
+    }
+  }
 `;

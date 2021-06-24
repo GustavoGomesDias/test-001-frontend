@@ -63,7 +63,7 @@ export default createGlobalStyle`
 
   .items {
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       display: block;
       width: 100%;
 
