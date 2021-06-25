@@ -214,3 +214,54 @@ export const Header = styled.header`
     }
   }
 `;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  margin-top: 10px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  input {
+    height: 30px;
+    width: 90%;
+    font-size: 18px;
+    margin-top: 5px;
+    padding: 0 10px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+  }
+  .column-1 {
+    width: 50%;
+  }
+
+  .cofirm-acquisition {
+    width: 90%;
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 800px) {
+    display: block;
+
+    .column-1 {
+      width: 100%;
+
+      label {
+        width: 100%;
+        input {
+          width: 100%;
+        }
+      }
+
+      .cofirm-acquisition {
+        width: 100%;
+      }
+    }
+  }
+`;

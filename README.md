@@ -1,7 +1,8 @@
 # Andamento
-
-- [ ] Vender veículo
+- [ ] Verificar placa, para ela ser única (backend)
 - [ ] Home
+- [x] Vender veículo
+  - [ ] Tentar transformar em um componente que aparece suspenso ao clicar em 'Vender
 - [x] Editar veículo
 - [x] Excluir veículo
 

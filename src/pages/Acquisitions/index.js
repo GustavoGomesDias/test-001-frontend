@@ -107,28 +107,34 @@ export default function Acquisitions() {
               </p>
               <div className="actions">
                 {ac.available ? (
-                  <button type="button" className="sale-button">
-                    <Link to="/" className="link">
+                  <Link
+                    to={{
+                      pathname: '/register/sale',
+                      state: { ac },
+                    }}
+                    className="link"
+                  >
+                    <button type="button" className="sale-button">
                       Vender
-                    </Link>
-                  </button>
+                    </button>
+                  </Link>
                 ) : (
                   <p className="center">
                     <span className="field available">Vendido</span>
                   </p>
                 )}
 
-                <button type="button" className="edit-button">
-                  <Link
-                    to={{
-                      pathname: `edit/acquisition`,
-                      state: { ac },
-                    }}
-                    className="link"
-                  >
+                <Link
+                  to={{
+                    pathname: `edit/acquisition`,
+                    state: { ac },
+                  }}
+                  className="link"
+                >
+                  <button type="button" className="edit-button">
                     Editar
-                  </Link>
-                </button>
+                  </button>
+                </Link>
                 <button
                   type="button"
                   className="delete-button"

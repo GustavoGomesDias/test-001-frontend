@@ -6,6 +6,7 @@ import Sales from '../pages/Sales';
 import Acquisitions from '../pages/Acquisitions';
 import Income from '../pages/Income';
 import Page404 from '../pages/Page404';
+import SaleForm from '../pages/SaleForm';
 import FormAcquisition from '../pages/FormAcquisition';
 
 export default function Routes() {
@@ -17,6 +18,7 @@ export default function Routes() {
       <Route exact path="/income" component={Income} />
       <Route exact path="/register/acquisition" component={FormAcquisition} />
       <Route exact path="/edit/acquisition" component={FormAcquisition} />
+      <Route exact path="/register/sale" component={SaleForm} />
       <Route path="*" component={Page404} />
     </Switch>
   );

@@ -11,12 +11,12 @@ export const Section = styled.div`
   width: 100%;
 
   .loss {
-    background: ${colors.errorColor};
+    background: ${colors.errorColor} !important;
     border-radius: 4px;
   }
 
   .profit {
-    background: ${colors.success};
+    background: ${colors.success} !important;
     border-radius: 4px;
   }
 `;

@@ -20,19 +20,17 @@ export const AcContainer = styled.div`
 
   .sale-button {
     background: ${colors.success};
-
-    .link {
-      color: #fff;
-    }
   }
 
   .edit-button {
     margin-top: 15px;
     background: ${colors.warning};
+  }
 
-    .link {
-      color: #fff;
-    }
+  .link {
+    display: flex;
+    color: #fff;
+    width: 100%;
   }
 
   .delete-button {

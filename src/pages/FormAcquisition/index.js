@@ -4,8 +4,7 @@ import { get } from 'lodash';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
-import { Container, Header } from '../../styles/GlobalStyles';
-import { Form } from './styled';
+import { Container, Header, Form } from '../../styles/GlobalStyles';
 import axios from '../../config/axios';
 import { validationField } from '../../validations/validations';
 
