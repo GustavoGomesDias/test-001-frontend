@@ -1,4 +1,5 @@
 # Andamento
+- [ ] Bug no mobile (setando a propriedade do controle responsivo como true) 
 - [ ] Verificar placa, para ela ser única (backend)
 - [ ] Home
 - [x] Vender veículo
