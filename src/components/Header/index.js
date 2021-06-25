@@ -36,6 +36,11 @@ export default function Healder() {
               Vendas
             </Link>
           </li>
+          <li>
+            <Link className="link" to="/income">
+              Receita
+            </Link>
+          </li>
         </ul>
       </nav>
     </Nav>

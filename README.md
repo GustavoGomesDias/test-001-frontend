@@ -1,3 +1,22 @@
+# Andamento
+
+- [ ] Vender veículo
+- [ ] Home
+- [x] Editar veículo
+- [x] Excluir veículo
+
+- [x] Cadastrar a compra de um veículo, modelo, marca, ano de fabricação, placa, cor, chassi, data da compra e valor da compra.
+- [x] Listar todos os veículos
+- [x] Listar veículos disponíveis
+- [x] Listar histórico de veículos vendidos
+- [x] Listar o valor todal de compras
+- [x] Listar o valor todal de vendas
+- [x] Lucro/pejuízo
+- [x] Valor pago em comissão
+- [x] Mobile
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

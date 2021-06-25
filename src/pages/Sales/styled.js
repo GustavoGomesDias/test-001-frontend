@@ -18,24 +18,6 @@ export const SaleContainer = styled.div`
     padding: 5px 0;
   }
 
-  .edit-button {
-    width: 82px;
-    display: flex;
-    margin-top: 5px;
-    cursor: pointer;
-    background: ${colors.success};
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: 700;
-    transition: all 300ms;
-  }
-
-  .edit-button:hover {
-    filter: brightness(75%);
-  }
-
   .delete-button {
     margin-top: 15px;
     background: ${colors.errorColor};
