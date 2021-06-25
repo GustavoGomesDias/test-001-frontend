@@ -1,9 +1,10 @@
 # Andamento
-- [ ] Bug no mobile (setando a propriedade do controle responsivo como true) 
+- [ ] Tentar transformar em um componente que aparece suspenso ao clicar em 'Vender
 - [ ] Verificar placa, para ela ser única (backend)
 - [ ] Home
+- [x] Bug em listar veículos disponíveis
+- [x] Bug no mobile (setando a propriedade do controle responsivo como true)
 - [x] Vender veículo
-  - [ ] Tentar transformar em um componente que aparece suspenso ao clicar em 'Vender
 - [x] Editar veículo
 - [x] Excluir veículo
 

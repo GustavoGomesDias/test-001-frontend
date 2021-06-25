@@ -25,8 +25,8 @@ export default function Healder() {
             <Link
               className="link "
               to="/"
-              onClick={() => setActive(!active)}
-              onKeyDown={() => setActive(!active)}
+              onClick={() => (active ? setActive(!active) : active)}
+              onKeyDown={() => (active ? setActive(!active) : active)}
             >
               Home
             </Link>
@@ -35,8 +35,8 @@ export default function Healder() {
             <Link
               className="link"
               to="/acquisitions"
-              onClick={() => setActive(!active)}
-              onKeyDown={() => setActive(!active)}
+              onClick={() => (active ? setActive(!active) : active)}
+              onKeyDown={() => (active ? setActive(!active) : active)}
             >
               Compras
             </Link>
@@ -45,8 +45,8 @@ export default function Healder() {
             <Link
               className="link"
               to="/sales"
-              onClick={() => setActive(!active)}
-              onKeyDown={() => setActive(!active)}
+              onClick={() => (active ? setActive(!active) : active)}
+              onKeyDown={() => (active ? setActive(!active) : active)}
             >
               Vendas
             </Link>
