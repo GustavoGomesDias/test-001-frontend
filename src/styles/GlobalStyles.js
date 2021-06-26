@@ -11,6 +11,14 @@ export default createGlobalStyle`
     font-family: sans-serif;
   }
 
+  html, body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
   button {
     cursor: pointer;
     background: ${color.success};
@@ -150,6 +158,13 @@ export default createGlobalStyle`
       border-radius: 4px;
     }
   }
+
+  .saleform {
+    z-index: 2 !important;
+    margin: 0;
+    height: 200px;
+    width: 50%;
+  }
 `;
 
 export const Container = styled.section`
@@ -160,6 +175,8 @@ export const Container = styled.section`
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #fff;
+
+  height: 100%;
 `;
 
 export const Header = styled.header`
@@ -227,6 +244,10 @@ export const Form = styled.form`
     margin-bottom: 20px;
   }
 
+  .full {
+    width: 100%;
+  }
+
   input {
     height: 30px;
     width: 90%;
@@ -236,6 +257,7 @@ export const Form = styled.form`
     border: 1px solid #fff;
     border-radius: 4px;
   }
+
   .column-1 {
     width: 50%;
   }

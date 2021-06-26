@@ -4,6 +4,7 @@ import { get } from 'lodash';
 import { toast } from 'react-toastify';
 
 import { Container, Header } from '../../styles/GlobalStyles';
+import Background from '../../components/Background';
 import { AcContainer } from './styled';
 import axios from '../../config/axios';
 
@@ -11,6 +12,7 @@ export default function Acquisitions() {
   const [acquisitions, setAcquisitions] = useState([]);
   const [available, setAvailable] = useState(false);
   const [vehicles, setVehicles] = useState([]);
+  const [id, setId] = useState(0);
 
   useEffect(() => {
     async function getAcquisitions() {
@@ -29,16 +31,16 @@ export default function Acquisitions() {
   }
 
   function handleSolds() {
-    if (!available) setAvailable(!available);
+    if (available === false) setAvailable(!available);
     const arr = [];
     acquisitions.map((ac) => (!ac.available ? arr.push(ac) : arr));
     setVehicles(arr);
   }
 
-  async function deleteVehicle(id, e) {
+  async function deleteVehicle(vehicleId, e) {
     e.preventDefault();
     try {
-      await axios.delete(`/acquisition/delete/${id}`);
+      await axios.delete(`/acquisition/delete/${vehicleId}`);
       toast.success('Deletado com sucesso!');
       window.location.reload();
     } catch (err) {
@@ -49,7 +51,8 @@ export default function Acquisitions() {
   }
 
   return (
-    <Container className="acquisition">
+    <Container>
+      <Background id={id} />
       <Header>
         <h1>Compras</h1>
         <div className="button-actions">
@@ -114,17 +117,13 @@ export default function Acquisitions() {
               </p>
               <div className="actions">
                 {ac.available ? (
-                  <Link
-                    to={{
-                      pathname: '/register/sale',
-                      state: { ac },
-                    }}
-                    className="link"
+                  <button
+                    type="button"
+                    className="sale-button"
+                    onClick={() => setId(ac.id)}
                   >
-                    <button type="button" className="sale-button">
-                      Vender
-                    </button>
-                  </Link>
+                    Vender
+                  </button>
                 ) : (
                   <p className="center">
                     <span className="field available">Vendido</span>

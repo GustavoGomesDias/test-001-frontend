@@ -4,13 +4,11 @@ import { toast } from 'react-toastify';
 import { get } from 'lodash';
 import { useHistory } from 'react-router-dom';
 
-import { Container, Header, Form } from '../../styles/GlobalStyles';
+import { Container, Form } from '../../styles/GlobalStyles';
 import axios from '../../config/axios';
 import { validationField } from '../../validations/validations';
 
-export default function SaleForme({ location }) {
-  const vehicle = location.state;
-
+export default function SaleForm({ id }) {
   const [value, setValue] = useState(0);
   const history = useHistory();
   async function handleSubmit(e) {
@@ -26,7 +24,6 @@ export default function SaleForme({ location }) {
     if (formErrors) return;
 
     try {
-      const { id } = vehicle.ac;
       await axios.post('/sales', {
         acquisition_id: id,
         value,
@@ -43,13 +40,9 @@ export default function SaleForme({ location }) {
   }
 
   return (
-    <Container>
-      <Header>
-        <h1>Vender um veículo</h1>
-      </Header>
-
+    <Container className="saleform">
       <Form onSubmit={handleSubmit}>
-        <label htmlFor="price">
+        <label htmlFor="price" className="full">
           Preço de venda
           <input
             type="number"
@@ -67,15 +60,10 @@ export default function SaleForme({ location }) {
   );
 }
 
-SaleForme.defaultProps = {
-  location: {
-    pathname: '',
-  },
+SaleForm.defaultProps = {
+  id: 0,
 };
 
-SaleForme.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-    state: PropTypes.objectOf(PropTypes.object),
-  }),
+SaleForm.propTypes = {
+  id: PropTypes.number,
 };

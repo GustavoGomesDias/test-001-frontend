@@ -1,5 +1,5 @@
 # Andamento
-- [ ] Tentar transformar em um componente que aparece suspenso ao clicar em 'Vender
+- [ ] Tentar transformar SaleForm em um componente que aparece suspenso ao clicar em 'Vender
 - [ ] Verificar placa, para ela ser única (backend)
 - [ ] Home
 - [x] Bug em listar veículos disponíveis
