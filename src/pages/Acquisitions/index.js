@@ -13,6 +13,7 @@ export default function Acquisitions() {
   const [available, setAvailable] = useState(false);
   const [vehicles, setVehicles] = useState([]);
   const [id, setId] = useState(0);
+  const [render, setRender] = useState(false);
 
   useEffect(() => {
     async function getAcquisitions() {
@@ -50,9 +51,14 @@ export default function Acquisitions() {
     }
   }
 
+  function handleSale(vehicleId) {
+    setId(vehicleId);
+    setRender(!render);
+  }
+
   return (
     <Container>
-      <Background id={id} />
+      <Background id={id} isRender={render} />
       <Header>
         <h1>Compras</h1>
         <div className="button-actions">
@@ -120,7 +126,7 @@ export default function Acquisitions() {
                   <button
                     type="button"
                     className="sale-button"
-                    onClick={() => setId(ac.id)}
+                    onClick={() => handleSale(ac.id)}
                   >
                     Vender
                   </button>

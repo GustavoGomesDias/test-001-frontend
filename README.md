@@ -1,5 +1,5 @@
 # Andamento
-- [ ] Tentar transformar SaleForm em um componente que aparece suspenso ao clicar em 'Vender
+- [ ] Bug ao renderizar o form de venda
 - [ ] Verificar placa, para ela ser única (backend)
 - [ ] Home
 - [x] Bug em listar veículos disponíveis
@@ -7,7 +7,7 @@
 - [x] Vender veículo
 - [x] Editar veículo
 - [x] Excluir veículo
-
+- [x] Tentar transformar SaleForm em um componente que aparece suspenso ao clicar em 'Vender
 - [x] Cadastrar a compra de um veículo, modelo, marca, ano de fabricação, placa, cor, chassi, data da compra e valor da compra.
 - [x] Listar todos os veículos
 - [x] Listar veículos disponíveis

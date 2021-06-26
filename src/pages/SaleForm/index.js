@@ -16,7 +16,7 @@ export default function SaleForm({ id }) {
 
     let formErrors = false;
 
-    if (validationField(value)) {
+    if (validationField(value) || value === 0) {
       formErrors = true;
       toast.error('Todos os campos precisam ser preenchindos.');
     }

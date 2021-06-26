@@ -46,7 +46,7 @@ export default function FormAcquisition({ location }) {
 
     if (!/^[a-zA-Z]{3}[0-9]{4}$/.test(plate)) {
       formErrors = true;
-      toast.error('Todos os campos precisam ser preenchindos.');
+      toast.error('Placa inválida.');
     }
 
     if (price === 0) {

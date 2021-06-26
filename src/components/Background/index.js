@@ -4,20 +4,18 @@ import PropTypes from 'prop-types';
 import { Background } from './styled';
 import SaleForm from '../../pages/SaleForm';
 
-export default function BackgroundComponent({ id }) {
+export default function BackgroundComponent({ isRender, id }) {
   const [vehicle, setVehicle] = useState(0);
   const [render, setRender] = useState(true);
-
-  console.log(render);
 
   useEffect(() => {
     function handleRender() {
       setVehicle(id);
-      setRender(true);
+      setRender(isRender);
     }
 
     handleRender();
-  }, [id]);
+  }, [isRender, id]);
 
   if (id === 0 || render === false) {
     return <></>;
@@ -39,7 +37,14 @@ export default function BackgroundComponent({ id }) {
 BackgroundComponent.defaultProps = {
   id: 0,
 };
+BackgroundComponent.defaultProps = {
+  isRender: false,
+};
 
 BackgroundComponent.propTypes = {
   id: PropTypes.number,
+};
+
+BackgroundComponent.propTypes = {
+  isRender: PropTypes.bool,
 };
