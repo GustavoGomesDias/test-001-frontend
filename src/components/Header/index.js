@@ -23,16 +23,6 @@ export default function Healder() {
         <ul className={active ? 'nav-list active' : 'nav-list'}>
           <li>
             <Link
-              className="link "
-              to="/"
-              onClick={() => (active ? setActive(!active) : active)}
-              onKeyDown={() => (active ? setActive(!active) : active)}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
               className="link"
               to="/acquisitions"
               onClick={() => (active ? setActive(!active) : active)}

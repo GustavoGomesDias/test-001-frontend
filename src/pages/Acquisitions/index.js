@@ -19,6 +19,7 @@ export default function Acquisitions() {
     async function getAcquisitions() {
       const response = await axios.get('/acquisition');
       setAcquisitions(response.data);
+      document.title = 'Compras';
     }
 
     getAcquisitions();
