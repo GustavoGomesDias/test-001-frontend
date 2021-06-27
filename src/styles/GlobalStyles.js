@@ -70,6 +70,7 @@ export default createGlobalStyle`
   }
 
   .items {
+    transition-delay: 0.5s;
 
     @media (max-width: 900px) {
       display: block;

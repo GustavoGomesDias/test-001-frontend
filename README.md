@@ -1,7 +1,7 @@
 # Andamento
 - [ ] Bug ao renderizar o form de venda
   - Alternativa: reaload da página ao clicar em voltar ou ao clicar em vender (alternativa ruim)
-- [ ] Verificar placa, para ela ser única (backend)
+- [x] Verificar placa, para ela ser única (backend)
 - [x] Bug em listar veículos disponíveis
 - [x] Bug no mobile (setando a propriedade do controle responsivo como true)
 - [x] Vender veículo

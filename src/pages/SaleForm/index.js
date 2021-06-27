@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { get } from 'lodash';
-import { useHistory } from 'react-router-dom';
 
 import { Container, Form } from '../../styles/GlobalStyles';
 import axios from '../../config/axios';
@@ -10,7 +9,6 @@ import { validationField } from '../../validations/validations';
 
 export default function SaleForm({ id }) {
   const [value, setValue] = useState(0);
-  const history = useHistory();
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -29,10 +27,8 @@ export default function SaleForm({ id }) {
         value,
       });
       toast.success('Vendido com sucesso.');
-      history.push('/acquisitions');
+      window.location.reload();
     } catch (err) {
-      console.log(err);
-
       const errors = get(err, 'response.data.errors', []);
 
       errors.map((error) => toast.error(error));

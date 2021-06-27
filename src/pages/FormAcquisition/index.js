@@ -85,7 +85,7 @@ export default function FormAcquisition({ location }) {
       history.push('/acquisitions');
     } catch (err) {
       const errors = get(err, 'response.data.errors', []);
-
+      console.log(err);
       errors.map((error) => toast.error(error));
     }
   }
@@ -102,7 +102,7 @@ export default function FormAcquisition({ location }) {
             <input
               type="text"
               value={chassis}
-              onChange={(e) => setChassis(e.target.value)}
+              onChange={(e) => setChassis(e.target.value.toUpperCase())}
               placeholder="Chassi do Carro"
             />
           </label>
@@ -141,7 +141,7 @@ export default function FormAcquisition({ location }) {
             <input
               type="text"
               value={plate}
-              onChange={(e) => setPlate(e.target.value)}
+              onChange={(e) => setPlate(e.target.value.toUpperCase())}
               placeholder="Placa do Carro"
             />
           </label>
