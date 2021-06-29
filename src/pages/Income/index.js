@@ -38,19 +38,27 @@ export default function Component() {
           <div className="infos">
             <p>
               <span className="field description">Compras</span> R${' '}
-              {acquisition.toFixed(2)}
+              {acquisition.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+              })}
             </p>
             <p>
               <span className="field description">Vendas</span> R${' '}
-              {sale.toFixed(2)}
+              {sale.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+              })}
             </p>
             <p>
               <span className="field description">Commissão</span> R${' '}
-              {commission.toFixed(2)}
+              {commission.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+              })}
             </p>
             <p className={income < 0 ? 'loss' : 'profit'}>
               <span className="field description">Receita</span> R${' '}
-              {income.toFixed(2)}
+              {income.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+              })}
             </p>
           </div>
         </div>

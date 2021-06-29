@@ -97,7 +97,10 @@ export default function Acquisitions() {
                 </span>
               </p>
               <p>
-                <span className="field description">Preço</span> {ac.price}
+                <span className="field description">Preço</span> R${' '}
+                {ac.price.toLocaleString('pt-BR', {
+                  minimumFractionDigits: 2,
+                })}
               </p>
 
               <p>

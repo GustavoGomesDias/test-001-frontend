@@ -41,12 +41,17 @@ export default function Sales() {
             <h3 className="header">{formatDate(sale.created_at)}</h3>
             <div className="infos">
               <p>
-                <span className="field description">Valor da venda</span>{' '}
-                {sale.value}
+                <span className="field description">Valor da venda</span> R${' '}
+                {sale.value.toLocaleString('pt-BR', {
+                  minimumFractionDigits: 2,
+                })}
               </p>
               <p>
                 <span className="field description">Comissão do vendedor</span>{' '}
-                {sale.commission}
+                R${' '}
+                {sale.commission.toLocaleString('pt-BR', {
+                  minimumFractionDigits: 2,
+                })}
               </p>
               <p>
                 <span className="field description">Chassi do veículo</span>{' '}
@@ -56,7 +61,10 @@ export default function Sales() {
                 <span className="field description">
                   Preço de aquisição do veículo
                 </span>{' '}
-                R$ {sale.Acquisition.price}
+                R${' '}
+                {sale.Acquisition.price.toLocaleString('pt-BR', {
+                  minimumFractionDigits: 2,
+                })}
               </p>
             </div>
           </div>
