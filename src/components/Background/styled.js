@@ -32,6 +32,7 @@ export const Background = styled.section`
     align-items: center;
     width: 100%;
     height: 50%;
+    background: rgba(0, 0, 0, 0.8);
 
     .back {
       margin-top: 20px;
