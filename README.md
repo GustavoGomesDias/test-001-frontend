@@ -13,10 +13,11 @@ Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](h
 ➡ [Link do site](https://test-001-frontend.vercel.app/) (status: on ✔) - Caso demore para servidor responder, considere esperar um tempo para a chegada das informações.
 
 ## 📕 Sumário
-1. [Tecnologias usadadas](https://github.com/GustavoGomesDias/test-001#1--tecnologias-usadas)
-2. [Para rodar o projeto LOCALMENTE](https://github.com/GustavoGomesDias/test-001#2--para-rodar-o-projeto-localmente)
-3. [Para fazer deploy no Heroku](https://github.com/GustavoGomesDias/test-001#3--para-fazer-deploy-no-heroku)
-4. [Configurar variáveis de ambiente](https://github.com/GustavoGomesDias/test-001#4-vari%C3%A1veis-de-ambiente-necess%C3%A1rio-no-heroku-tamb%C3%A9m)
+1. [Features](https://github.com/GustavoGomesDias/test-001-frontend#1--features)
+2. [Tecnologias usadas](https://github.com/GustavoGomesDias/test-001-frontend#2--tecnologias-usadas)
+3. [Para rodar localmenteu](https://github.com/GustavoGomesDias/test-001-frontend#3--para-rodar-localmente)
+4. [Para fazer deploy na Vercel](https://github.com/GustavoGomesDias/test-001-frontend#4--para-fazer-deploy-na-vercel)
+5. [Como ficou cada tela](https://github.com/GustavoGomesDias/test-001-frontend#5--como-ficou-cada-tela)
 
 ## 1. ⚙ Features
   #### Proposto pelo teste
@@ -57,7 +58,7 @@ Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](h
 * ESLint AirBnB
 * Prettier
 
-# 3. 🎉 Para rodar LOCALMENTE
+## 3. 🎉 Para rodar LOCALMENTE
 1. Clone o repositório:
     ```
     git clone https://github.com/GustavoGomesDias/test-001-frontend.git
