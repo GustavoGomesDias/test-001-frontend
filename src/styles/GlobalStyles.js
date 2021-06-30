@@ -229,6 +229,7 @@ export const Header = styled.header`
 
       border-top: 2px solid ${color.primaryColor};
       border-bottom: 2px solid ${color.primaryColor};
+      font-size: 10px;
     }
   }
 `;
