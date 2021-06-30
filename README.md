@@ -37,6 +37,8 @@ Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](h
   - [ ] Bug ao renderizar o form de venda
     - Alternativa: reaload da página ao clicar em voltar (alternativa ruim)
     - Alternativa: Configurar o redux apenas para isso (a que eu iria nesse caso)
+  - [ ] Configurar o Electron e criar um app desktop
+    - Aqui eu encontrei dificuldades, pois apesar de ter conseguido criar o app desktop, eu não consegui fazer com ele fizesse requisições para API
   - [x] Verificar placa, para ela ser única (backend)
   - [x] Bug em listar veículos disponíveis
   - [x] Bug no mobile (setando a propriedade do controle responsivo como true)
