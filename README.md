@@ -1,92 +1,110 @@
-# Andamento
-- [ ] Bug ao renderizar o form de venda
-  - Alternativa: reaload da página ao clicar em voltar ou ao clicar em vender (alternativa ruim)
-- [x] Verificar placa, para ela ser única (backend)
-- [x] Bug em listar veículos disponíveis
-- [x] Bug no mobile (setando a propriedade do controle responsivo como true)
-- [x] Vender veículo
-- [x] Editar veículo
-- [x] Excluir veículo
-- [x] Tentar transformar SaleForm em um componente que aparece suspenso ao clicar em 'Vender
-- [x] Cadastrar a compra de um veículo, modelo, marca, ano de fabricação, placa, cor, chassi, data da compra e valor da compra.
-- [x] Listar todos os veículos
-- [x] Listar veículos disponíveis
-- [x] Listar histórico de veículos vendidos
-- [x] Listar o valor todal de compras
-- [x] Listar o valor todal de vendas
-- [x] Lucro/pejuízo
-- [x] Valor pago em comissão
-- [x] Mobile
+# Job Test (frontend)
 
+Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](https://devnology.com.br/).
 
+➡ [Descrição do teste](https://github.com/GustavoGomesDias/test-001/blob/main/test-description.md)
 
-# Getting Started with Create React App
+➡ [Documentação da API online](https://gustavogomesdias.github.io/test-001/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+➡ [Repositório backend](https://github.com/GustavoGomesDias/test-001)
 
-## Available Scripts
+➡ [Link da API](https://apivehicles.herokuapp.com/acquisition) (status: on ✔)
 
-In the project directory, you can run:
+➡ [Link do site](https://test-001-frontend.vercel.app/) (status: on ✔) - Caso demore para servidor responder, considere esperar um tempo para a chegada das informações.
 
-### `yarn start`
+## 📕 Sumário
+1. [Tecnologias usadadas](https://github.com/GustavoGomesDias/test-001#1--tecnologias-usadas)
+2. [Para rodar o projeto LOCALMENTE](https://github.com/GustavoGomesDias/test-001#2--para-rodar-o-projeto-localmente)
+3. [Para fazer deploy no Heroku](https://github.com/GustavoGomesDias/test-001#3--para-fazer-deploy-no-heroku)
+4. [Configurar variáveis de ambiente](https://github.com/GustavoGomesDias/test-001#4-vari%C3%A1veis-de-ambiente-necess%C3%A1rio-no-heroku-tamb%C3%A9m)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 1. ⚙ Features
+  #### Proposto pelo teste
+  - [x] Cadastrar a compra de um veículo, modelo, marca, ano de fabricação, placa, cor, chassi, data da compra e valor da compra.
+  - [x] Registrar a venda de um veículo, com data da venda, valor da venda e comissão do vendedor (10% sobre o lucro da venda).
+  - [x] Listar todos os veículos
+  - [x] Listar veículos disponíveis
+  - [x] Listar histórico de veículos vendidos
+  - [x] Listar o valor todal de compras
+  - [x] Listar o valor todal de vendas
+  - [x] Lucro/pejuízo
+  - [x] Valor pago em comissão
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  #### ToDO
+  - [ ] Editar histórico de vendas
+    - Não sei se seria algo legal de se ter, mas basta adicionar a opção de editar no frontend, pois no backend já existe
+  - [ ] Bug ao renderizar o form de venda
+    - Alternativa: reaload da página ao clicar em voltar (alternativa ruim)
+    - Alternativa: Configurar o redux apenas para isso (a que eu iria nesse caso)
+  - [x] Verificar placa, para ela ser única (backend)
+  - [x] Bug em listar veículos disponíveis
+  - [x] Bug no mobile (setando a propriedade do controle responsivo como true)
+  - [x] Vender veículo
+  - [x] Editar veículo
+  - [x] Excluir veículo
+  - [x] Excluir venda do histórico
+  - [x] Tentar transformar SaleForm em um componente que aparece suspenso ao clicar em 'Vender
+  - [x] Mobile
 
-### `yarn test`
+## 2. 💻 Tecnologias usadas
+* React
+* React router dom
+* React Toastify
+* Styçed component
+* Axios
+* Prop types
+* Lodash
+* ESLint AirBnB
+* Prettier
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 3. 🎉 Para rodar LOCALMENTE
+1. Clone o repositório:
+    ```
+    git clone https://github.com/GustavoGomesDias/test-001-frontend.git
+    ```
+2. Instale todas es tec's usadas junto do Node JS:
 
-### `yarn build`
+    ```
+    npm install
+    ```
+3. Rode o aplicativo e então será aberta uma nova aba no seu navegador padrão:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```
+    npm start
+    ```
+ 4. Para que ele funcione totalmente, seria necessário que ele tivesse uma conexão com a API que foi desenvolvida junto desse app, mas como esse é apenas um teste, eu provavelmente vou limitar quem pode fazer requisições a API caso ela estaja on, então siga a sessão [Para rodar o projeto LOCALMENTE](https://github.com/GustavoGomesDias/test-001#2--para-rodar-o-projeto-localmente) do repositório backend para ter a API servindo está parte aqui.
+ 5. Configurando a API para servir a parte de frontend:
+    - Vá até o arquivo [app.js](https://github.com/GustavoGomesDias/test-001/blob/main/src/app.js)
+    - Configure a whitelist para que a parte de frontend consiga fazer requisições:
+      ```js
+      const whiteList = [
+        'http://localhost:3000', // <=== Esse link deverá ser adicionado
+        'https://test-001-frontend.vercel.app',
+      ];
+      ```
+## 4. 🚀 Para fazer deploy na Vercel:
+1. Crie uma conta na [Vercel](https://vercel.com/signup)
+2. Clique em "New Project"
+  <img src="https://drive.google.com/uc?export=view&id=1fFVa1HwsneS6-uR4fJBK1AZUNAsRML1g" width="600px;" alt="Profile"/>
+3. Importe um repositório
+  <img src="https://drive.google.com/uc?export=view&id=1TcH6qV6xB_J9W2DggJeHRt_YeHy3qJsS" width="600px;" height="500px;" alt="Profile"/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 5. 🎨 Como ficou cada Tela
+ ### Compras
+  <img src="https://drive.google.com/uc?export=view&id=1md085dBCUKqC48ksm9RqIyUA66frLFaz" width="600px;" alt="Acquisitions"/>
+  
+ ### Vendas
+  <img src="https://drive.google.com/uc?export=view&id=1pK5INmJG_dtuRcCPeF4hNN53mOFeruid" width="600px;" alt="Sales"/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ ### Receitas
+  <img src="https://drive.google.com/uc?export=view&id=1jFwIvqMxCEj9CW9x44y0_X2OCQcM5wVT" width="600px;" alt="Income"/>
+  
+ ### Responsivo
+  <img src="https://drive.google.com/uc?export=view&id=1oLSrte0z3Y-7IX16GAFOA15qhQfo_Say" width="600px;" alt="Response"/>
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Autor
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/GustavoGomesDias"><img src="https://github.com/GustavoGomesDias.png" width="100px;" alt="Profile"/><br /><sub><b>Gustavo</b></sub></a><br /><a href="https://github.com/GustavoGomesDias" title="Code">😎</a></td>
+  <tr>
+</table>
