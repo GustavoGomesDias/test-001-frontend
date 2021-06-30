@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import { get } from 'lodash';
 
 import { Container, Header } from '../../styles/GlobalStyles';
 import axios from '../../config/axios';
@@ -6,7 +8,6 @@ import { SaleContainer } from './styled';
 
 export default function Sales() {
   const [sales, setSales] = useState([]);
-  // const [date, setDate] = useState('');
 
   function formatDate(dateHeader) {
     const fullDate =
@@ -29,6 +30,19 @@ export default function Sales() {
 
     getSales();
   }, []);
+
+  async function deleteSale(saleId, e) {
+    e.preventDefault();
+    try {
+      await axios.delete(`/sales/delete/${saleId}`);
+      toast.success('Deletado com sucesso!');
+      window.location.reload();
+    } catch (err) {
+      const errors = get(err, 'response.data.errors', []);
+
+      errors.map((error) => toast.error(error));
+    }
+  }
 
   return (
     <Container>
@@ -66,6 +80,15 @@ export default function Sales() {
                   minimumFractionDigits: 2,
                 })}
               </p>
+              <div className="actions">
+                <button
+                  type="button"
+                  className="delete-button"
+                  onClick={(e) => deleteSale(sale.id, e)}
+                >
+                  Excluir
+                </button>
+              </div>
             </div>
           </div>
         ))}
