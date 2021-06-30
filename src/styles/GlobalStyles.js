@@ -231,6 +231,10 @@ export const Header = styled.header`
       border-bottom: 2px solid ${color.primaryColor};
       font-size: 10px;
     }
+
+    .available {
+      font-size: 10px;
+    }
   }
 `;
 
