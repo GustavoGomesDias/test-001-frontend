@@ -16,6 +16,7 @@ export const AcContainer = styled.div`
     align-items: center;
     justify-content: space-around;
     padding: 5px 0;
+    font-size: 10px;
   }
 
   .sale-button {

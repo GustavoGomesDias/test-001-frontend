@@ -24,14 +24,14 @@ export const Background = styled.section`
     background: rgba(0, 0, 0, 0.8);
   }
 
-  .gamb {
+  .sale {
     margin: 50px;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 50%;
 
     .back {
       margin-top: 20px;

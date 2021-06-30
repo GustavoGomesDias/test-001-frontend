@@ -24,7 +24,7 @@ export default function BackgroundComponent({ isRender, id }) {
   return (
     <Background className="bg">
       <div />
-      <div className="gamb">
+      <div className="sale">
         <SaleForm id={vehicle} />
         <button type="button" className="back" onClick={() => setRender(false)}>
           Voltar
