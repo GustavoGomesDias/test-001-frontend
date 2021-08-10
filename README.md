@@ -53,7 +53,7 @@ Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](h
 * React
 * React router dom
 * React Toastify
-* Styçed component
+* Styled component
 * Axios
 * Prop types
 * Lodash
