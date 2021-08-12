@@ -84,12 +84,13 @@ Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](h
         'https://test-001-frontend.vercel.app',
       ];
       ```
-    - Configure o local onde o Axios vai chamar (path: src/config):
-      ```js
-      export default axios.create({
-        baseURL: 'http://localhost:3001',
-      });
-      ```
+ 6. Configurando o axios no frontend:
+  - Configure o local onde o Axios vai chamar (path: src/config):
+    ```js
+    export default axios.create({
+      baseURL: 'http://localhost:3001',
+    });
+    ```
 ## 4. 🚀 Para fazer deploy na Vercel:
 1. Crie uma conta na [Vercel](https://vercel.com/signup)
 2. Clique em "New Project"
