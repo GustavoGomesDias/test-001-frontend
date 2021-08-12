@@ -8,7 +8,7 @@ Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](h
 
 ➡ [Repositório backend](https://github.com/GustavoGomesDias/test-001)
 
-➡ [Link da API](https://apivehicles.herokuapp.com/acquisition) (status: on ✔)
+➡ [Link da API](https://apivehicles.herokuapp.com/acquisition) (status: off ❌)
 
 ➡ [Link do site](https://test-001-frontend.vercel.app/) (status: on ✔) - Caso demore para servidor responder, considere esperar um tempo para a chegada das informações.
 
@@ -52,7 +52,7 @@ Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](h
 * React
 * React router dom
 * React Toastify
-* Styçed component
+* Styled component
 * Axios
 * Prop types
 * Lodash
