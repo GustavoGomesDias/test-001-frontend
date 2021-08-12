@@ -7,6 +7,7 @@ import { Container, Header } from '../../styles/GlobalStyles';
 import Background from '../../components/Background';
 import { AcContainer } from './styled';
 import axios from '../../config/axios';
+import SaleForm from '../SaleForm';
 
 export default function Acquisitions() {
   const [acquisitions, setAcquisitions] = useState([]);
@@ -57,9 +58,17 @@ export default function Acquisitions() {
     setRender(!render);
   }
 
+  function handleRender() {
+    setRender(!render);
+  }
+
   return (
     <Container>
-      <Background id={id} isRender={render} />
+      {render && (
+        <Background onRender={handleRender}>
+          <SaleForm id={id} />
+        </Background>
+      )}
       <Header>
         <h1>Compras</h1>
         <div className="button-actions">

@@ -34,11 +34,10 @@ Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](h
   #### ToDO
   - [ ] Editar histórico de vendas
     - Não sei se seria algo legal de se ter, mas basta adicionar a opção de editar no frontend, pois no backend já existe
-  - [ ] Bug ao renderizar o form de venda
-    - Alternativa: reaload da página ao clicar em voltar (alternativa ruim)
-    - Alternativa: Configurar o redux apenas para isso (a que eu iria nesse caso)
+
   - [ ] Configurar o Electron e criar um app desktop
     - Aqui eu encontrei dificuldades, pois apesar de ter conseguido criar o app desktop, eu não consegui fazer com ele fizesse requisições para API
+  - [x] Bug ao renderizar o form de venda
   - [x] Verificar placa, para ela ser única (backend)
   - [x] Bug em listar veículos disponíveis
   - [x] Bug no mobile (setando a propriedade do controle responsivo como true)
@@ -85,6 +84,12 @@ Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](h
         'https://test-001-frontend.vercel.app',
       ];
       ```
+    - Configure o local onde o Axios vai chamar (path: src/config):
+      ```js
+      export default axios.create({
+        baseURL: 'http://localhost:3001',
+      });
+      ```
 ## 4. 🚀 Para fazer deploy na Vercel:
 1. Crie uma conta na [Vercel](https://vercel.com/signup)
 2. Clique em "New Project"
@@ -95,13 +100,13 @@ Esse é o repositório frontend do teste para Dev Jr proposto pela [Devnology](h
 ## 5. 🎨 Como ficou cada Tela
  ### Compras
   <img src="https://drive.google.com/uc?export=view&id=1md085dBCUKqC48ksm9RqIyUA66frLFaz" width="600px;" alt="Acquisitions"/>
-  
+
  ### Vendas
   <img src="https://drive.google.com/uc?export=view&id=1pK5INmJG_dtuRcCPeF4hNN53mOFeruid" width="600px;" alt="Sales"/>
 
  ### Receitas
   <img src="https://drive.google.com/uc?export=view&id=1jFwIvqMxCEj9CW9x44y0_X2OCQcM5wVT" width="600px;" alt="Income"/>
-  
+
  ### Responsivo
   <img src="https://drive.google.com/uc?export=view&id=1oLSrte0z3Y-7IX16GAFOA15qhQfo_Say" width="600px;" alt="Response"/>
 

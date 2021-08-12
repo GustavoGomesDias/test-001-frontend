@@ -1,32 +1,16 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Background } from './styled';
-import SaleForm from '../../pages/SaleForm';
 
-export default function BackgroundComponent({ isRender, id }) {
-  const [vehicle, setVehicle] = useState(0);
-  const [render, setRender] = useState(true);
-
-  useEffect(() => {
-    function handleRender() {
-      setVehicle(id);
-      setRender(isRender);
-    }
-
-    handleRender();
-  }, [isRender, id]);
-
-  if (id === 0 || render === false) {
-    return <></>;
-  }
-
+export default function BackgroundComponent(props) {
   return (
     <Background className="bg">
       <div />
       <div className="sale">
-        <SaleForm id={vehicle} />
-        <button type="button" className="back" onClick={() => setRender(false)}>
+        {props.children}
+        <button type="button" className="back" onClick={() => props.onRender()}>
           Voltar
         </button>
       </div>
@@ -34,17 +18,13 @@ export default function BackgroundComponent({ isRender, id }) {
   );
 }
 
-BackgroundComponent.defaultProps = {
-  id: 0,
-};
-BackgroundComponent.defaultProps = {
-  isRender: false,
+BackgroundComponent.propTypes = {
+  onRender: PropTypes.func.isRequired,
 };
 
 BackgroundComponent.propTypes = {
-  id: PropTypes.number,
-};
-
-BackgroundComponent.propTypes = {
-  isRender: PropTypes.bool,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
